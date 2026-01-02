@@ -24,7 +24,6 @@ function autoFill() {
     const config = EVAL_DATA[title];
     const form = document.querySelector("#regfrm");
     if (!title || !config || !form) return;
-
     form.querySelector("table").querySelectorAll("tr").forEach(tr => {
         tr.querySelector("input.required")?.click();
     });
