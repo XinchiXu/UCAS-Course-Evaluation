@@ -33,9 +33,8 @@ function autoFill() {
     if (title === "课程评估") {
         form.querySelectorAll("input.required.radio")[config.radioIndex]?.click();
         config.checkboxes.forEach(reason => {
-            if(!form.querySelectorAll("input.required.checkbox")[reason].checked){
-                form.querySelectorAll("input.required.checkbox")[reason].click();
-            }
+            var check = form.querySelectorAll("input.required.checkbox")[reason];
+            check?.checked || check?.click();
         });
     }
     document.querySelector("#adminValidateCode")?.scrollIntoView({ behavior: 'smooth', block: 'center' });
